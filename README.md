@@ -5,6 +5,9 @@ An independent, data-driven reimagining inspired by Ryan Michela's GiantTrees
 and acacia trees in matching Overworld biomes. The archive's natural-generation
 setting was enabled; this port starts with that feature.
 
+Version 0.1.1 corrects the structure palette for Minecraft 26.3. Replace the
+0.1.0 JAR, which could report a successful `/place` without placing blocks.
+
 This release does **not** contain the original GPLv3 Arbaro/Bukkit code or its
 XML presets. The 18 structures are newly generated approximations of those
 species' scale and silhouettes. It does not yet include the original custom

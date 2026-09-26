@@ -121,11 +121,13 @@ def build(species, variant):
     palette_index = {state: i for i, state in enumerate(states)}
     palette = tag.List[tag.Compound]()
     for name, axis in states:
-        state = tag.Compound({"Name": tag.String(name)})
+        # DataVersion 5023 uses the 26.3 block-state encoding. The older
+        # Name/Properties keys silently resolve to air at this version.
+        state = tag.Compound({"id": tag.String(name)})
         if axis:
-            state["Properties"] = tag.Compound({"axis": tag.String(axis)})
+            state["properties"] = tag.Compound({"axis": tag.String(axis)})
         elif name == leaves:
-            state["Properties"] = tag.Compound({"persistent": tag.String("true"), "distance": tag.String("7")})
+            state["properties"] = tag.Compound({"persistent": tag.String("true"), "distance": tag.String("7")})
         palette.append(state)
     blocks = tag.List[tag.Compound]()
     for (x, y, z), state in sorted(placed.items(), key=lambda p: (p[0][1], p[0][0], p[0][2])):
