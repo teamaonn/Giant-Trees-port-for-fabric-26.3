@@ -1,0 +1,19 @@
+{
+  "name": "giant_trees_enable_disable",
+  "path": "<CONFIG_DIR>/giant_trees",
+  "header": "Enable or disable individual giant tree species.",
+  "config_type": "ENABLE_DISABLE",
+  "structure_sets": [
+    {
+      "modid": "giant_trees",
+      "structure_set": [
+        "giant_trees:oak",
+        "giant_trees:birch",
+        "giant_trees:spruce",
+        "giant_trees:jungle",
+        "giant_trees:dark_oak",
+        "giant_trees:acacia"
+      ]
+    }
+  ]
+}

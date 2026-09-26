@@ -1,0 +1,19 @@
+{
+  "name": "giant_trees_structure_placement",
+  "path": "<CONFIG_DIR>/giant_trees",
+  "header": "Control spacing and separation for naturally generated giant trees.",
+  "config_type": "PLACEMENT",
+  "structure_sets": [
+    {
+      "modid": "giant_trees",
+      "structure_set": [
+        "giant_trees:oak",
+        "giant_trees:birch",
+        "giant_trees:spruce",
+        "giant_trees:jungle",
+        "giant_trees:dark_oak",
+        "giant_trees:acacia"
+      ]
+    }
+  ]
+}

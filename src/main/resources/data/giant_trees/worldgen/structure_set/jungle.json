@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:jungle_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19860933,
+    "spacing": 18,
+    "separation": 9
+  }
+}

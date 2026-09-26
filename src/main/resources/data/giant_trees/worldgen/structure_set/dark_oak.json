@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:dark_oak_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19860934,
+    "spacing": 18,
+    "separation": 9
+  }
+}

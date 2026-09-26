@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:acacia_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19860935,
+    "spacing": 18,
+    "separation": 9
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:spruce_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:spruce_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:spruce_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19860932,
+    "spacing": 18,
+    "separation": 9
+  }
+}
