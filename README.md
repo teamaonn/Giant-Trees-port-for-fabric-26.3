@@ -27,8 +27,11 @@ provides placement and enable/disable settings under `config/giant_trees/`.
 
 The trees contain ordinary logs and persistent leaves. They use native
 heightmap-projected structures, so `/locate structure giant_trees:oak_1` can
-find a generated variant. For a manual test, use `/place structure
- giant_trees:oak_1` on open ground in a disposable world.
+find a generated variant. For a manual visual test, stand on open ground and
+use `/place template giant_trees:oak_1 ~ ~ ~`. The trunk will be about 16
+blocks east and south of the command position. `/place structure` projects
+to terrain height and offsets the template, so its reported position is not
+the trunk position.
 
 ## Rebuild structures
 
