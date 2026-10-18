@@ -8,11 +8,11 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.ItemEnchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -28,15 +28,15 @@ public final class GiantTrees implements ModInitializer {
         Items.DARK_OAK_SAPLING, Items.ACACIA_SAPLING, Items.MANGROVE_PROPAGULE, Items.CHERRY_SAPLING,
         Items.PALE_OAK_SAPLING, Items.BAMBOO, Items.CRIMSON_FUNGUS, Items.WARPED_FUNGUS};
 
-    public static ResourceLocation id(String path) { return ResourceLocation.fromNamespaceAndPath(ID, path); }
+    public static Identifier id(String path) { return Identifier.fromNamespaceAndPath(ID, path); }
 
     @Override public void onInitialize() {
         for (int i = 0; i < SPECIES.length; i++) {
             String name = "enchanted_" + SPECIES[i] + "_sapling";
-            ResourceLocation id = id(name);
+            Identifier id = id(name);
             ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
             Block block = Registry.register(BuiltInRegistries.BLOCK, id,
-                new EnchantedSaplingBlock(SPECIES[i], BlockBehaviour.Properties.of().setId(blockKey).noCollission().randomTicks().instabreak()));
+                new EnchantedSaplingBlock(SPECIES[i], BlockBehaviour.Properties.of().setId(blockKey).noCollision().randomTicks().instabreak()));
             ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
             Item item = Registry.register(BuiltInRegistries.ITEM, id,
                 new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix()
