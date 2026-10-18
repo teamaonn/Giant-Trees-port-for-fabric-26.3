@@ -1,0 +1,58 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:bamboo_round_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_round_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_round_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_broad_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_broad_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_broad_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:bamboo_umbrella_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19861554,
+    "spacing": 18,
+    "separation": 9
+  }
+}

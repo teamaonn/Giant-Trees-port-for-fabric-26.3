@@ -11,6 +11,42 @@
     {
       "structure": "giant_trees:birch_3",
       "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_cone_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_broad_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_broad_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_broad_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:birch_umbrella_3",
+      "weight": 1
     }
   ],
   "placement": {

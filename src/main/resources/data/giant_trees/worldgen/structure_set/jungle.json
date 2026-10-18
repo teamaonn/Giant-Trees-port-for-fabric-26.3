@@ -11,6 +11,42 @@
     {
       "structure": "giant_trees:jungle_3",
       "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_cone_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_broad_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_broad_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_broad_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:jungle_umbrella_3",
+      "weight": 1
     }
   ],
   "placement": {

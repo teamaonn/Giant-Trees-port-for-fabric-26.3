@@ -12,7 +12,13 @@
         "giant_trees:spruce",
         "giant_trees:jungle",
         "giant_trees:dark_oak",
-        "giant_trees:acacia"
+        "giant_trees:acacia",
+        "giant_trees:mangrove",
+        "giant_trees:cherry",
+        "giant_trees:pale_oak",
+        "giant_trees:bamboo",
+        "giant_trees:crimson",
+        "giant_trees:warped"
       ]
     }
   ]

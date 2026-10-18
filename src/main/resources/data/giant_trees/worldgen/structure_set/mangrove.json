@@ -1,0 +1,58 @@
+{
+  "structures": [
+    {
+      "structure": "giant_trees:mangrove_round_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_round_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_round_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_cone_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:mangrove_umbrella_3",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19861793,
+    "spacing": 18,
+    "separation": 9
+  }
+}

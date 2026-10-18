@@ -1,4 +1,4 @@
-"""Build deterministic 26.3 structure templates from six giant-tree profiles.
+"""Build deterministic 26.3 structure templates from vanilla wood profiles.
 
 Requires nbtlib (`python -m pip install nbtlib`). No game or server is needed.
 The profiles are an original approximation of the GiantTrees 1.1 silhouettes;
@@ -7,6 +7,7 @@ this script does not incorporate the GPL Arbaro renderer.
 
 import math
 import random
+import json
 from pathlib import Path
 
 import nbtlib
@@ -22,16 +23,36 @@ PROFILES = {
     "jungle": (61, 18, "round"),
     "dark_oak": (43, 20, "broad"),
     "acacia": (38, 21, "umbrella"),
+    "mangrove": (48, 19, "broad"),
+    "cherry": (46, 18, "round"),
+    "pale_oak": (45, 18, "broad"),
+    "bamboo": (50, 13, "cone"),
+    "crimson": (48, 18, "umbrella"),
+    "warped": (50, 16, "round"),
 }
+SHAPES = ("round", "cone", "broad", "umbrella")
+FOLIAGE = {"bamboo": "minecraft:azalea_leaves", "crimson": "minecraft:nether_wart_block", "warped": "minecraft:warped_wart_block"}
+BIOMES = {
+    "mangrove": ["mangrove_swamp"],
+    "cherry": ["cherry_grove"],
+    "pale_oak": ["pale_garden"],
+    "bamboo": ["bamboo_jungle"],
+    "crimson": ["crimson_forest"],
+    "warped": ["warped_forest"],
+}
+DATA = ROOT / "src/main/resources/data/giant_trees"
 
 
-def build(species, variant):
-    target_height, target_reach, shape = PROFILES[species]
-    rng = random.Random(f"giant_trees:{species}:{variant}")
+def build(species, variant, shape=None):
+    target_height, target_reach, native_shape = PROFILES[species]
+    shape = shape or native_shape
+    # Retain the original identifiers and random seeds for native silhouettes.
+    template_name = f"{species}_{variant}" if shape == native_shape else f"{species}_{shape}_{variant}"
+    rng = random.Random(f"giant_trees:{template_name}")
     height = target_height + rng.randint(-5, 5)
     reach = target_reach + rng.randint(-2, 2)
-    wood = f"minecraft:{species}_log"
-    leaves = f"minecraft:{species}_leaves"
+    wood = f"minecraft:{species}_{'stem' if species in ('crimson', 'warped') else 'block' if species == 'bamboo' else 'log'}"
+    leaves = FOLIAGE.get(species, f"minecraft:{species}_leaves")
     placed = {}
 
     def put(x, y, z, name, axis=None):
@@ -126,7 +147,7 @@ def build(species, variant):
         state = tag.Compound({"id": tag.String(name)})
         if axis:
             state["properties"] = tag.Compound({"axis": tag.String(axis)})
-        elif name == leaves:
+        elif name.endswith("_leaves"):
             state["properties"] = tag.Compound({"persistent": tag.String("true"), "distance": tag.String("7")})
         palette.append(state)
     blocks = tag.List[tag.Compound]()
@@ -143,12 +164,57 @@ def build(species, variant):
         "entities": tag.List[tag.Compound](),
     }, gzipped=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    dest = OUT / f"{species}_{variant}.nbt"
+    dest = OUT / f"{template_name}.nbt"
     root.save(dest)
     print(dest.name, tuple(root["size"]), len(blocks))
 
 
+def write_json(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, indent=2) + "\n")
+
+
+def make_worldgen(species):
+    native = PROFILES[species][2]
+    names = [f"{species}_{variant}" if shape == native else f"{species}_{shape}_{variant}"
+             for shape in SHAPES for variant in range(1, 4)]
+    for name in names:
+        write_json(DATA / "worldgen/template_pool" / f"{name}.json", {
+            "name": f"giant_trees:{name}", "fallback": "minecraft:empty",
+            "elements": [{"weight": 1, "element": {"element_type": "minecraft:single_pool_element",
+                "projection": "rigid", "location": f"giant_trees:{name}", "processors": "minecraft:empty"}}],
+        })
+        write_json(DATA / "worldgen/structure" / f"{name}.json", {
+            "type": "minecraft:jigsaw", "biomes": f"#giant_trees:has_structure/{species}",
+            "max_distance_from_center": 128, "size": 1, "spawn_overrides": {},
+            "start_height": {"absolute": 0}, "project_start_to_heightmap": "WORLD_SURFACE_WG",
+            "start_pool": f"giant_trees:{name}", "step": "surface_structures",
+            "terrain_adaptation": "none", "use_expansion_hack": False,
+        })
+    old_set = DATA / "worldgen/structure_set" / f"{species}.json"
+    placement = json.loads(old_set.read_text())["placement"] if old_set.exists() else {
+        "type": "minecraft:random_spread", "salt": 19860930 + sum(map(ord, species)),
+        "spacing": 18, "separation": 9,
+    }
+    write_json(old_set, {"structures": [{"structure": f"giant_trees:{name}", "weight": 1} for name in names],
+                         "placement": placement})
+    if species in BIOMES:
+        write_json(DATA / "tags/worldgen/biome/has_structure" / f"{species}.json",
+                   {"replace": False, "values": [f"minecraft:{biome}" for biome in BIOMES[species]]})
+
+
+def update_config():
+    for filename in ("giant_trees_placement.json", "giant_trees_enable_disable.json"):
+        path = ROOT / "src/main/resources/data/cristellib/structure_config" / filename
+        config = json.loads(path.read_text())
+        config["structure_sets"][0]["structure_set"] = [f"giant_trees:{species}" for species in PROFILES]
+        write_json(path, config)
+
+
 if __name__ == "__main__":
     for species in PROFILES:
-        for variant in range(1, 4):
-            build(species, variant)
+        for shape in SHAPES:
+            for variant in range(1, 4):
+                build(species, variant, shape)
+        make_worldgen(species)
+    update_config()

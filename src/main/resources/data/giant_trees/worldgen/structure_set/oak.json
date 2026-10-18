@@ -11,6 +11,42 @@
     {
       "structure": "giant_trees:oak_3",
       "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_cone_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_broad_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_broad_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_broad_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:oak_umbrella_3",
+      "weight": 1
     }
   ],
   "placement": {

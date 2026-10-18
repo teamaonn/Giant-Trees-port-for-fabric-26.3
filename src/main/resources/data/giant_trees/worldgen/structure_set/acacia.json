@@ -1,6 +1,42 @@
 {
   "structures": [
     {
+      "structure": "giant_trees:acacia_round_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_round_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_round_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_cone_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_broad_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_broad_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:acacia_broad_3",
+      "weight": 1
+    },
+    {
       "structure": "giant_trees:acacia_1",
       "weight": 1
     },

@@ -1,6 +1,30 @@
 {
   "structures": [
     {
+      "structure": "giant_trees:dark_oak_round_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_round_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_round_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_cone_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_cone_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_cone_3",
+      "weight": 1
+    },
+    {
       "structure": "giant_trees:dark_oak_1",
       "weight": 1
     },
@@ -10,6 +34,18 @@
     },
     {
       "structure": "giant_trees:dark_oak_3",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_umbrella_1",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_umbrella_2",
+      "weight": 1
+    },
+    {
+      "structure": "giant_trees:dark_oak_umbrella_3",
       "weight": 1
     }
   ],
