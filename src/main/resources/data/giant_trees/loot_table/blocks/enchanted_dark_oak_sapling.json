@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "giant_trees:enchanted_dark_oak_sapling"
+        }
+      ]
+    }
+  ]
+}
