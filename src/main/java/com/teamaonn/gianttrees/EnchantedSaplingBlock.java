@@ -50,7 +50,9 @@ public final class EnchantedSaplingBlock extends Block implements BonemealableBl
             default -> shape.equals("round");
         };
         String name = species + (nativeShape ? "" : "_" + shape) + "_" + variant;
-        StructureTemplate template = level.getServer().getStructureTemplateManager().get(GiantTrees.id(name));
+        Optional<StructureTemplate> found = level.getServer().getStructureTemplateManager().get(GiantTrees.id(name));
+        if (found.isEmpty()) return;
+        StructureTemplate template = found.get();
         Vec3i size = template.getSize();
         BlockPos origin = pos.offset(-size.getX() / 2, 0, -size.getZ() / 2);
         if (origin.getY() + size.getY() >= level.getMaxY() || !level.hasChunksAt(origin, origin.offset(size))) return;

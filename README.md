@@ -9,7 +9,8 @@ They generate in matching biomes, including crimson and warped forests.
 The bamboo giants use bamboo blocks and azalea leaves; the Nether giants
 use their matching stems and wart blocks.
 
-Version 0.2.0 expands the species and shapes. Version 0.1.1 corrected the
+Version 0.3.0 adds enchanted saplings for manual planting. Version 0.2.0
+expanded the species and shapes. Version 0.1.1 corrected the
 structure palette for Minecraft 26.3; version 0.1.0 could report a successful
 `/place` without placing blocks.
 
@@ -38,6 +39,20 @@ use `/place template giant_trees:oak_1 ~ ~ ~`. The trunk will be about 16
 blocks east and south of the command position. `/place structure` projects
 to terrain height and offsets the template, so its reported position is not
 the trunk position.
+
+## Enchanted saplings
+
+Craft on a 3×3 table with four emeralds in the corners, four enchanted books
+containing **Fortune III** on the cardinal sides, and the matching sapling in
+the center. Fortune II and ordinary enchanted books do not match. For mangrove
+use a propagule, for bamboo use bamboo, and for crimson or warped use the
+matching fungus. The result is a shimmering sapling of that species.
+
+Plant it on sturdy ground. It grows into one of that species' twelve giant
+templates with time, or immediately when bone meal is applied. The full tree
+must fit within loaded chunks and the world height limit; otherwise the
+sapling remains in place until the area is loaded. Breaking a planted sapling
+returns it. Allow ample open space around the sapling before growing it.
 
 ## Rebuild structures
 
